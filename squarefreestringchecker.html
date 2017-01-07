@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Square Free String Checker</title>
+</head>
+<h1>Square Free String Checker</h1>
+<body style="text-align: center;
+    font-size: 50px; background-color: #909090;"><br>
+  Enter word: <input style="    width: 300px;
+    height: 28px;" type="text" name="fname" id="fname"><br><br><br>
+  
+  <input style="font-size: 25px;" type="button" onclick="isSquareFree(document.getElementById('fname').value)" value="Submit">
+
+
+<script>
+function isSquareFree(s) 
+{
+    var small=s.toLowerCase();
+    var x=small.length;
+    var x1=small.length/2;
+    var first=small.slice(0,x1);
+    var second=small.slice(x1,x);
+    var flag=0;
+
+    if (x===0) 
+    {
+                return(alert("Please enter a valid input"));
+                
+    }
+    else if(x>50)
+    {
+                return(alert("Please enter a valid input (1-50 char)"));
+    }
+    else
+    {           
+                if(first==second)
+                {
+                    flag=1;
+                }
+
+                for (var i = 0; i < x; i++)
+                
+    	
+				{
+    					var c = small.charAt(i);
+    					var cc=small.charAt(i+1);
+    					if(c==cc)
+    					{
+    						flag=1;
+    					}
+
+    					
+				}
+	}
+
+    if(flag==1)
+    {
+        return(alert("not squre free"));
+    }
+    else
+    {
+        return(alert("squre free"));
+    }
+
+}
+</script>
+</body>
+</html>
